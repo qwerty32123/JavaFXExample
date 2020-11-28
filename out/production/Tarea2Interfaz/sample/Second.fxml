@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SecondController">
+   <children>
+      <GridPane prefHeight="401.0" prefWidth="601.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="301.0">
+               <children>
+                  <TextField fx:id="NombreInputText" onMousePressed="#nombreclear" prefHeight="39.0" prefWidth="119.0" text="Nombre">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip fx:id="nombreToolTipText" text="Nombre" />
+                     </tooltip>
+                  </TextField>
+                  <TextField fx:id="ApellidosInputText" onMousePressed="#apellidosclear" prefHeight="39.0" prefWidth="171.0" text="Apellidos">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip fx:id="apellidosToolTipText" text="Apellidos" />
+                     </tooltip>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <children>
+                  <TextField fx:id="TelefonoTextField" onMousePressed="#telefonoclear" prefHeight="37.0" prefWidth="217.0" text="Telefono">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip fx:id="TelefonoToolTipText" text="Telefono" />
+                     </tooltip>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+               <children>
+                  <Button fx:id="ReservarButton" mnemonicParsing="false" onAction="#ReservaBottonAction" prefHeight="47.0" prefWidth="134.0" text="Reservar">
+                     <tooltip>
+                        <Tooltip fx:id="reservarToolTipText" text="Reservar" />
+                     </tooltip></Button>
+               </children>
+            </HBox>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <left>
+                  <VBox prefHeight="134.0" prefWidth="144.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="FReservaLabel" text="Fecha de reserva">
+                           <tooltip>
+                              <Tooltip fx:id="freservaToolTipText" text="Fecha de Reserva" />
+                           </tooltip></Label>
+                        <DatePicker fx:id="FReservaDatePicker">
+                           <tooltip>
+                              <Tooltip fx:id="dateChooserToolTipText" text="Selecciona una fecha" />
+                           </tooltip></DatePicker>
+                        <Label fx:id="TEventoLabel" text="Tipo de evento">
+                           <tooltip>
+                              <Tooltip fx:id="EventoToolTipText" text="Tipo de evento" />
+                           </tooltip></Label>
+                        <ComboBox fx:id="TEventoComboBox" onAction="#TEventoComboBoxListener" prefWidth="150.0">
+                           <tooltip>
+                              <Tooltip fx:id="eventoelegirToolTipText" text="Elegir Evento" />
+                           </tooltip></ComboBox>
+                     </children>
+                  </VBox>
+               </left>
+               <right>
+                  <VBox alignment="TOP_CENTER" prefHeight="134.0" prefWidth="154.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="TCocinaLabel" text="Tipo de cocina">
+                           <tooltip>
+                              <Tooltip fx:id="tcocinaToolTipText" text="Tipo de cocina" />
+                           </tooltip></Label>
+                        <ComboBox fx:id="TCocinaComboBox" prefWidth="150.0">
+                           <tooltip>
+                              <Tooltip fx:id="tcocinaToolTipText" text="Tipo Cocina" />
+                           </tooltip></ComboBox>
+                     </children>
+                  </VBox>
+               </right>
+            </BorderPane>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <center>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="NPersonasLabel" prefHeight="16.0" prefWidth="145.0" text="Numero de Personas">
+                           <tooltip>
+                              <Tooltip fx:id="nPersonasLabelToolTipText" text="Numero de Personas" />
+                           </tooltip></Label>
+                        <Spinner fx:id="NPersonasSpinner">
+                           <tooltip>
+                              <Tooltip fx:id="npersonastooltip" text="numero personas asisitir" />
+                           </tooltip></Spinner>
+                        <Label fx:id="JCongresoLabel" text="Numero de Jornadas del congreso">
+                           <tooltip>
+                              <Tooltip text="Numero de jornadas del congreso" />
+                           </tooltip></Label>
+                        <Spinner fx:id="JCongresoSpinner">
+                           <tooltip>
+                              <Tooltip text="Jornadas del congreso" />
+                           </tooltip></Spinner>
+                        <RadioButton fx:id="HabAsisRaddioButton" mnemonicParsing="false" text="Habitaciones para asistentes">
+                           <tooltip>
+                              <Tooltip text="Habitaciones para asistentes" />
+                           </tooltip></RadioButton>
+                     </children>
+                  </VBox>
+               </center>
+            </BorderPane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
