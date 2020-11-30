@@ -100,6 +100,7 @@ public class ControllerMain {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Second.fxml"));
             Scene scene = new Scene(loader.load());
+            scene.getStylesheets().add(getClass().getResource("style1.css").toExternalForm());
             this.reservaStage.setScene(scene);
             this.reservaStage.initModality(Modality.APPLICATION_MODAL);
 
